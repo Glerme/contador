@@ -1,4 +1,141 @@
-Contador
-Reiniciar
-Faltam
-Dias Horas Minutos Segundos
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #191a18;
+        color: white;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .app {
+        width: 100%;
+        height: 100%;
+      }
+
+      .container-logo {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
+      }
+
+      .container-logo a {
+        font-family: "Segoe UI", sans-serif;
+        color: #21eb00;
+        font-size: 40px;
+        font-weight: 500;
+      }
+
+      .container-logo a:hover::before {
+        content: " ←";
+        margin-right: 5px;
+      }
+
+      .container-contador {
+        padding: 40px;
+      }
+
+      .titulo {
+        color: #a6a6a6;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        font-size: 60px;
+        font-family: "Segoe UI", sans-serif;
+        font-weight: 500;
+      }
+
+      button {
+        font-size: 25px;
+        display: inline-block;
+        font-family: "Segoe UI", sans-serif;
+        padding: 7px;
+        height: 50px;
+        width: 200px;
+        border-radius: 10px;
+        border: none;
+        color: black;
+        outline: none;
+        cursor: pointer;
+        background-color: #21eb00;
+        transition: all 0.5s;
+      }
+
+      button:hover {
+        background-color: black;
+        color: white;
+        transform: scale(1.1);
+      }
+
+      .contador {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contador h6 {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        font-size: 80px;
+        font-family: "Segoe UI", sans-serif;
+        font-weight: 900;
+      }
+
+      .contador div {
+        padding: 30px;
+        font-size: 40px;
+        font-weight: 300;
+      }
+
+      .contador div span {
+        color: #21eb00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="container-logo">
+        <div><a href="index.html">Contador</a></div>
+        <div><button id="restart">Reiniciar!</button></div>
+      </div>
+
+      <div class="container-contador">
+        <h6 class="titulo">Faltam</h6>
+        <div class="contador">
+          <div>
+            <h6 id="dias">00</h6>
+            <span>Dias</span>
+          </div>
+          <div>
+            <h6 id="horas">00</h6>
+            <span>Horas</span>
+          </div>
+          <div>
+            <h6 id="minutos">00</h6>
+            <span>Minutos</span>
+          </div>
+          <div>
+            <h6 id="segundos">00</h6>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/script.js" type="module"></script>
+  </body>
+</html>

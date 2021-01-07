@@ -14,7 +14,6 @@ function init(e) {
   var dataInput = document.querySelector("#data");
   const valor = dataInput.value;
   const novoV = new Date(valor).getTime();
-  console.log(novoV);
   window.localStorage.setItem("timestamp", novoV);
   window.location = "/contador.html?t=" + novoV;
 }
@@ -47,12 +46,16 @@ function criarContador() {
     const segundos = Math.floor(diferenca / second);
 
     if (!final) {
-      containerD.innerHTML = dias < 0 ? "00" : dias.toString().padStart(2, "0");
+      containerD.innerHTML =
+        dias <= 0 ? "00" : dias.toString().padStart(2, "0");
       containerH.innerHTML = (hora - 24 * dias).toString().padStart(2, "0");
       containerM.innerHTML = (minutos - 60 * hora).toString().padStart(2, "0");
       containerS.innerHTML = (segundos - 60 * minutos)
         .toString()
         .padStart(2, "0");
+    } else if (dias < 0 && hora < 0 && minutos < 0 && segundos < 0) {
+      let final = false;
+      document.querySelector("h6").innerText = "Fim";
     }
   }
 }
